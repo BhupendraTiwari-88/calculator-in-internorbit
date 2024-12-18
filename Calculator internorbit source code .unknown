@@ -1,0 +1,53 @@
+def calculator():
+  """
+  A simple calculator that performs basic arithmetic operations.
+
+  Prompts the user to input two numbers and an operation choice.
+  Performs the calculation and displays the result.
+  """
+
+  while True:
+    print("Select operation.")
+    print("1.Add")
+    print("2.Subtract")
+    print("3.Multiply")
+    print("4.Divide")
+    print("5.Exit")
+
+    choice = input("Enter choice(1/2/3/4/5): ")
+
+    # Check if the user wants to exit
+    if choice == '5':
+      print("Exiting calculator.")
+      break
+
+    try:
+      num1 = float(input("Enter first number: "))
+      num2 = float(input("Enter second number: "))
+    except ValueError:
+      print("Invalid input. Please enter numbers only.")
+      continue
+
+    if choice in ('1', '2', '3', '4'):
+      if choice == '1':
+        result = num1 + num2
+        operation = "+"
+      elif choice == '2':
+        result = num1 - num2
+        operation = "-"
+      elif choice == '3':
+        result = num1 * num2
+        operation = "*"
+      elif choice == '4':
+        if num2 == 0:
+          print("Error: Division by zero.")
+          continue
+        result = num1 / num2
+        operation = "/"
+
+      print(f"{num1} {operation} {num2} = {result}")
+    else:
+      print("Invalid Input")
+
+if __name__ == "__main__":
+  calculator()
