@@ -1,1 +1,1 @@
-#  Prpjecct no.1 calculator-in-internorbit
+#  Projecct no.1 calculator-in-internorbit
